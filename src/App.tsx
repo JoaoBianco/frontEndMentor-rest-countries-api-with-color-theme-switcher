@@ -1,5 +1,5 @@
-import { useState } from "react";
-import "./App.css";
+import "./css/resetCss.scss";
+import "./css/style.scss";
 
 function App() {
   return <div></div>;
