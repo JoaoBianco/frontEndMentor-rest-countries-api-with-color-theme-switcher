@@ -10,4 +10,73 @@
   --fs-400: 300;
   --fs-500: 600;
   --fs-600: 800;
+
+  --spacer-100: 0.25rem;
+  --spacer-300: 0.75rem;
+  --spacer-400: 1rem;
+  --spacer-600: 2rem;
+  --spacer-800: 4rem;
+
+  color: var(--clr__text);
 }
+
+.globalWrapper {
+  transition: background 250ms ease, color 250ms ease;
+}
+
+.dark {
+  --clr__background: var(--clr__background-dark);
+  --clr__text: var(--clr__text-dark);
+  --clr__input: var(--clr__input-dark);
+  --clr__white: hsl(0, 0%, 100%);
+
+  color: var(--clr__white);
+}
+
+// Utils
+.container {
+  padding-inline: var(--spacer-800);
+
+  @media screen and (max-width: 768px) {
+    padding-inline: var(--spacer-400);
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+// End Utils
+
+// Navbar
+
+.navBar {
+  isolation: isolate;
+  padding-block: var(--spacer-400);
+
+  background-color: var(--clr__input);
+  box-shadow: 0px 1px 15px -10px var(--clr__input);
+  z-index: 2;
+
+  h1 {
+    font-size: clamp(0.75rem, 5vw, 1.25rem);
+  }
+  &:has(.light) {
+    background-color: white;
+  }
+}
+
+.navBar__container {
+  justify-content: space-between;
+}
+
+.navBar__darkMode {
+  gap: clamp(var(--spacer-100), 1vw, var(--spacer-300));
+  cursor: pointer;
+}
+
+// End NavBar
