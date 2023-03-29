@@ -2,10 +2,19 @@ import React, { useState } from "react";
 import { faMagnifyingGlass, faBroom } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Header = () => {
-  const [countrySearch, setCountrySearch] = useState("");
-  const [regionSearch, setRegionSearch] = useState("");
+type HeaderProps = {
+  countrySearch: string;
+  setCountrySearch: React.Dispatch<React.SetStateAction<string>>;
+  regionSearch: string;
+  setRegionSearch: React.Dispatch<React.SetStateAction<string>>;
+};
 
+const Header = ({
+  countrySearch,
+  setCountrySearch,
+  regionSearch,
+  setRegionSearch,
+}: HeaderProps) => {
   return (
     <div className="main | flex">
       <div className="main-search | flex align-items-center box">
