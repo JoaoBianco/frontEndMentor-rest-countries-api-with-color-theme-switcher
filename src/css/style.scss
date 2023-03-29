@@ -6,6 +6,7 @@
   --clr__input: hsl(0, 0%, 52%);
   --clr__input-dark: hsl(209, 23%, 22%);
   --clr__white: hsl(0, 0%, 100%);
+  --clr__shadow: rgba(225, 225, 225, 0.5);
 
   --fs-400: 300;
   --fs-500: 600;
@@ -17,11 +18,16 @@
   --spacer-600: 2rem;
   --spacer-800: 4rem;
 
+  --box-shadow: 0px 0px 5px 1px var(--clr__shadow);
+  --border-radius: 5px;
+
   color: var(--clr__text);
 }
 
 .globalWrapper {
   transition: background 250ms ease, color 250ms ease;
+  background-color: var(--clr__background);
+  min-height: 100vh;
 }
 
 .dark {
@@ -29,6 +35,8 @@
   --clr__text: var(--clr__text-dark);
   --clr__input: var(--clr__input-dark);
   --clr__white: hsl(0, 0%, 100%);
+  --clr__shadow: hsl(207, 26%, 19%);
+  --box-shadow: 0px 0px 5px 1px var(--clr__shadow);
 
   color: var(--clr__white);
 }
@@ -48,6 +56,16 @@
 
 .align-items-center {
   align-items: center;
+}
+
+.box,
+.box * {
+  border: 0;
+}
+
+.box {
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
 }
 
 // End Utils
@@ -80,3 +98,53 @@
 }
 
 // End NavBar
+
+// Main
+
+.main {
+  margin-top: var(--spacer-600);
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacer-400);
+  @media screen and (max-width: 768px) {
+    justify-content: end;
+  }
+  input,
+  select {
+    background-color: inherit;
+    color: inherit;
+  }
+}
+
+.main-search {
+  position: relative;
+  width: 400px;
+  input {
+    padding: var(--spacer-400);
+    padding-left: var(--spacer-600);
+    width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.main-selectWrapper {
+  align-self: flex-end;
+}
+
+.main-searchIcon {
+  position: absolute;
+  left: var(--spacer-300);
+}
+
+.main-select {
+  padding: var(--spacer-400);
+}
+
+.main-clear {
+  cursor: pointer;
+  padding-inline: var(--spacer-300);
+}
+
+// End Main
