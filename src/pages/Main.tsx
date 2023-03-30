@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
-import Countries from "../components/Countries";
+import Countries from "../components/countries/Countries";
 
 const Main = () => {
   const [countrySearch, setCountrySearch] = useState("");
