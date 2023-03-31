@@ -14,7 +14,7 @@ const Main = () => {
         regionSearch={regionSearch}
         setRegionSearch={setRegionSearch}
       />
-      <Countries />
+      <Countries countrySearch={countrySearch} regionSearch={regionSearch} />
     </div>
   );
 };
