@@ -1,4 +1,6 @@
 :root {
+  --clr__background__accent: hsl(0, 0%, 98%);
+  --clr__background__accent-dark: hsl(209, 23%, 22%);
   --clr__background: hsl(0, 0%, 98%);
   --clr__background-dark: hsl(207, 26%, 17%);
   --clr__text: hsl(200, 15%, 8%);
@@ -16,6 +18,7 @@
   --spacer-300: 0.75rem;
   --spacer-400: 1rem;
   --spacer-600: 2rem;
+  --spacer-700: 3rem;
   --spacer-800: 4rem;
 
   --box-shadow: 0px 0px 5px 1px var(--clr__shadow);
@@ -31,6 +34,7 @@
 }
 
 .dark {
+  --clr__background__accent: var(--clr__background__accent-dark);
   --clr__background: var(--clr__background-dark);
   --clr__text: var(--clr__text-dark);
   --clr__input: var(--clr__input-dark);
@@ -39,6 +43,10 @@
   --box-shadow: 0px 0px 5px 1px var(--clr__shadow);
 
   color: var(--clr__white);
+
+  ::placeholder {
+    color: var(--clr__white);
+  }
 }
 
 // Utils
@@ -66,6 +74,13 @@
 .box {
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
+  background-color: var(--clr__background__accent);
+
+  overflow: hidden;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 // End Utils
@@ -121,7 +136,7 @@
   width: 400px;
   input {
     padding: var(--spacer-400);
-    padding-left: var(--spacer-600);
+    padding-left: var(--spacer-700);
     width: 100%;
   }
   @media screen and (max-width: 768px) {
@@ -153,6 +168,36 @@
 
 .countries {
   margin-top: var(--spacer-600);
+
+  display: grid;
+  gap: var(--spacer-800);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 // End Countries
+
+// Country card
+
+.country {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+  }
+}
+
+.country__text {
+  gap: var(--spacer-100);
+}
+
+.box-container {
+  padding: var(--spacer-600) var(--spacer-400);
+  h3 {
+    margin-bottom: var(--spacer-300);
+  }
+}
+
+// End Country card

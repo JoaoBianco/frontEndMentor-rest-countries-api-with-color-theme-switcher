@@ -16,8 +16,8 @@ export type TCountry = {
   currencies: string[];
   languages: string[];
   flags: {
-    googleMaps: string;
-    openStreetMaps: string;
+    png: string;
+    alt: string;
   };
 }[];
 
@@ -35,7 +35,6 @@ const Countries = () => {
 
   countriesResponse.isFetching && <h2>Loading...</h2>;
 
-  // countriesResponse.data?.map((country) => console.log(country));
   return (
     <div className="countries">
       {countriesResponse.isFetched &&

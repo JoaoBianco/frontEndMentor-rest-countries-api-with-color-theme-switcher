@@ -14,14 +14,33 @@ type TCountryProps = {
     currencies: string[];
     languages: string[];
     flags: {
-      googleMaps: string;
-      openStreetMaps: string;
+      png: string;
+      alt: string;
     };
   };
 };
 
 const Country = ({ countryData }: TCountryProps) => {
-  return <div>{countryData.name.common}</div>;
+  return (
+    <div className="country | box">
+      <img src={countryData.flags.png} alt={countryData.flags.alt} />
+      <div className="box-container">
+        <h3>{countryData.name.common}</h3>
+        <div className="country__text | flex">
+          <p className="bold">Population: </p>
+          <p>{new Intl.NumberFormat("pt-BR").format(countryData.population)}</p>
+        </div>
+        <div className="country__text | flex">
+          <p className="bold">Region:</p>
+          <p>{countryData.region}</p>
+        </div>
+        <div className="country__text | flex">
+          <p className="bold">Capital:</p>
+          <p>{countryData.capital}</p>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Country;
