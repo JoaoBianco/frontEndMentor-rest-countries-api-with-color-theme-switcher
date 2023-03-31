@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Main from "./pages/Main";
 import Country from "./pages/Country";
 import NavBar from "./components/NavBar";
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 function App() {
   const [theme, setTheme] = useState("light");

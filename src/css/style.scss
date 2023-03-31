@@ -27,13 +27,21 @@
   color: var(--clr__text);
 }
 
+a,
+a:visited {
+  color: var(--clr__text);
+  text-decoration: none;
+}
+
 .globalWrapper {
   transition: background 250ms ease, color 250ms ease;
   background-color: var(--clr__background);
   min-height: 100vh;
+  padding-bottom: var(--spacer-400);
 }
 
-.dark {
+.dark,
+.dark a {
   --clr__background__accent: var(--clr__background__accent-dark);
   --clr__background: var(--clr__background-dark);
   --clr__text: var(--clr__text-dark);
@@ -179,6 +187,7 @@
   display: grid;
   gap: var(--spacer-800);
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  transition: all 550ms ease;
 }
 
 // End Countries
@@ -189,10 +198,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
   img {
     width: 100%;
     height: 50%;
     object-fit: cover;
+  }
+  &:is(:hover, :focus) {
+    transform: scale(1.05);
   }
 }
 

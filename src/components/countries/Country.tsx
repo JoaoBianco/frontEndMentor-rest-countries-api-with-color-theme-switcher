@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 type TCountryProps = {
   countryData: {
@@ -22,7 +23,10 @@ type TCountryProps = {
 
 const Country = ({ countryData }: TCountryProps) => {
   return (
-    <div className="country | box">
+    <Link
+      to={`${countryData.name.common.replace(" ", "_")}`}
+      className="country | box"
+    >
       <img src={countryData.flags.png} alt={countryData.flags.alt} />
       <div className="box-container">
         <h3>{countryData.name.common}</h3>
@@ -39,7 +43,7 @@ const Country = ({ countryData }: TCountryProps) => {
           <p>{countryData.capital}</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
