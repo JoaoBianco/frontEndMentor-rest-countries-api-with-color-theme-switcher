@@ -44,13 +44,17 @@ const Countries = ({ countrySearch, regionSearch }: CountriesProps) => {
 
   useEffect(() => {
     setFilteredCountries(
-      countriesResponse.data?.filter((country) =>
-        country.name.common
-          .toLowerCase()
-          .includes(countrySearch.toLocaleLowerCase())
+      countriesResponse.data?.filter(
+        (country) =>
+          country.name.common
+            .toLowerCase()
+            .includes(countrySearch.toLocaleLowerCase()) &&
+          country.region
+            .toLocaleLowerCase()
+            .includes(regionSearch.toLocaleLowerCase())
       )
     );
-  }, [countrySearch]);
+  }, [countrySearch, regionSearch]);
 
   if (filteredCountries?.length === 0) return <p>No Country Found!</p>;
   countriesResponse.isFetching && <h2>Loading...</h2>;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { faMagnifyingGlass, faBroom } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -15,18 +15,29 @@ const Header = ({
   regionSearch,
   setRegionSearch,
 }: HeaderProps) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
   return (
     <div className="main | flex">
       <div className="main-search | flex align-items-center box">
         <span className="main-searchIcon">
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
+          <FontAwesomeIcon
+            onClick={() => inputRef.current?.focus()}
+            icon={faMagnifyingGlass}
+          />
         </span>
         <input
+          ref={inputRef}
           value={countrySearch}
           onChange={(e) => setCountrySearch(e.target.value)}
           type="text"
           placeholder="Search for a country..."
         />
+        {countrySearch !== "" && (
+          <span className="main-clearIcon" onClick={() => setCountrySearch("")}>
+            <FontAwesomeIcon icon={faBroom} />
+          </span>
+        )}
       </div>
       <div className="main-selectWrapper | box">
         <select

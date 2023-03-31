@@ -137,6 +137,7 @@
   input {
     padding: var(--spacer-400);
     padding-left: var(--spacer-700);
+    padding-right: var(--spacer-600);
     width: 100%;
   }
   @media screen and (max-width: 768px) {
@@ -151,6 +152,12 @@
 .main-searchIcon {
   position: absolute;
   left: var(--spacer-300);
+}
+
+.main-clearIcon {
+  cursor: pointer;
+  position: absolute;
+  right: var(--spacer-300);
 }
 
 .main-select {
