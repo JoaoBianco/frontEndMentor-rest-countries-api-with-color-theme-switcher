@@ -22,6 +22,7 @@ const Country = () => {
     () => fetchCountry(),
     {
       onError: () => errorResponseHandler(),
+      retry: false,
     }
   );
 
