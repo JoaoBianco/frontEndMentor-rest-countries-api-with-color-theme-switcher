@@ -57,7 +57,7 @@ const Countries = ({ countrySearch, regionSearch }: CountriesProps) => {
   }, [countrySearch, regionSearch]);
 
   if (filteredCountries?.length === 0) return <p>No Country Found!</p>;
-  countriesResponse.isFetching && <h2>Loading...</h2>;
+  if (countriesResponse.isFetching) return <h2>Loading...</h2>;
 
   return (
     <div className="countries">

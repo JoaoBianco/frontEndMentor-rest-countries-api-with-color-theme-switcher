@@ -34,6 +34,8 @@ const Country = () => {
     navigate("/");
   }
 
+  if (countryResponse.isFetching) return <h2>Loading...</h2>;
+
   return (
     <div className="countryDetails | container">
       <Link to="/" className="countryDetails-btn | btn box">
