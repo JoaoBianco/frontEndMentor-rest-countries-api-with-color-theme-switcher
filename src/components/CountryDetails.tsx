@@ -16,7 +16,7 @@ const CountryDetails = ({ countryData }: TCountryProps) => {
 
   return (
     <div className="countryDetails-wrapper | flex">
-      <img src={countryData.flags.png} alt={countryData.flags.alt} />
+      <img src={countryData.flags.png} alt={countryData.flags.alt || ""} />
       <div className="countryDetails-innerWrapper | flex flex-column">
         <h2>{countryData.name.common}</h2>
         <div className="flex space-between flex-wrap">

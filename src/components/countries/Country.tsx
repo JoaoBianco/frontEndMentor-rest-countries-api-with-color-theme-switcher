@@ -27,7 +27,7 @@ const Country = ({ countryData }: TCountryProps) => {
       to={`${countryData.name.common.replace(" ", "_")}`}
       className="country | box"
     >
-      <img src={countryData.flags.png} alt={countryData.flags.alt} />
+      <img src={countryData.flags.png} alt={countryData.flags.alt || ""} />
       <div className="box-container">
         <h3>{countryData.name.common}</h3>
         <div className="country__text | flex">
