@@ -6,19 +6,19 @@ import Country from "./Country";
 export type TCountry = {
   name: {
     common: string;
-    nativeName: string[];
+    nativeName: { official: string; common: string }[];
   };
   population: number;
   region: string;
   subRegion: string;
   capital: string[];
-  topLevelDomain: string[];
-  currencies: string[];
-  languages: string[];
+  tld: string[];
+  currencies: { name: string; symbol: string }[];
   flags: {
     png: string;
     alt: string;
   };
+  borders: string[];
 }[];
 
 type CountriesProps = {

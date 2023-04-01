@@ -1,23 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-type TCountryProps = {
+export type TCountryProps = {
   countryData: {
     name: {
       common: string;
-      nativeName: string[];
+      nativeName: { official: string; common: string }[];
     };
     population: number;
     region: string;
     subRegion: string;
     capital: string[];
-    topLevelDomain: string[];
-    currencies: string[];
-    languages: string[];
+    tld: string[];
+    currencies: { name: string; symbol: string }[];
     flags: {
       png: string;
       alt: string;
     };
+    borders: string[];
   };
 };
 

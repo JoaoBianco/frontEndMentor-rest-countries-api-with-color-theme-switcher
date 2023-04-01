@@ -15,6 +15,7 @@
   --fs-600: 800;
 
   --spacer-100: 0.25rem;
+  --spacer-200: 0.5rem;
   --spacer-300: 0.75rem;
   --spacer-400: 1rem;
   --spacer-600: 2rem;
@@ -41,7 +42,7 @@ a:visited {
 }
 
 .dark,
-.dark a {
+.dark :is(a, button) {
   --clr__background__accent: var(--clr__background__accent-dark);
   --clr__background: var(--clr__background-dark);
   --clr__text: var(--clr__text-dark);
@@ -89,6 +90,41 @@ a:visited {
 
 .bold {
   font-weight: bold;
+}
+
+.padding-100-700 {
+  padding: var(--spacer-100) var(--spacer-700);
+}
+
+.gap-400 {
+  gap: var(--spacer-400);
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.btn {
+  padding: var(--spacer-200) var(--spacer-600);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacer-200);
+  cursor: pointer;
+  &:is(:hover, :focus) {
+    scale: 1.05;
+  }
 }
 
 // End Utils
@@ -221,3 +257,33 @@ a:visited {
 }
 
 // End Country card
+
+// Country details
+
+.countryDetails {
+  margin-top: var(--spacer-700);
+}
+
+.countryDetails-btn {
+  margin-bottom: var(--spacer-600);
+}
+
+.countryDetails-wrapper {
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacer-700);
+  img {
+    flex: 1;
+  }
+  div {
+    flex: 2;
+  }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+.countryDetails-innerWrapper {
+  gap: var(--spacer-600);
+}
+
+// End Country details

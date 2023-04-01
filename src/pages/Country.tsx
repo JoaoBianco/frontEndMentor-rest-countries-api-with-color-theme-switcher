@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useParams, useNavigate } from "react-router-dom";
 import { TCountry } from "../components/countries/Countries";
+import CountryDetails from "../components/CountryDetails";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 import axios from "axios";
 import { useQuery } from "react-query";
@@ -31,7 +34,17 @@ const Country = () => {
     navigate("/");
   }
 
-  return <div>Country</div>;
+  return (
+    <div className="countryDetails | container">
+      <Link to="/" className="countryDetails-btn | btn box">
+        <FontAwesomeIcon icon={faArrowLeft} />
+        Back
+      </Link>
+      {countryResponse.isFetched && (
+        <CountryDetails countryData={countryResponse?.data![0]} />
+      )}
+    </div>
+  );
 };
 
 export default Country;
