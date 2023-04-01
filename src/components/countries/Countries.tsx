@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useQuery, UseQueryResult } from "react-query";
 import axios from "axios";
 import Country from "./Country";
+import LoadingCountries from "../loading/LoadingCountries";
 
 export type TCountry = {
   name: {
@@ -57,7 +58,7 @@ const Countries = ({ countrySearch, regionSearch }: CountriesProps) => {
   }, [countrySearch, regionSearch]);
 
   if (filteredCountries?.length === 0) return <p>No Country Found!</p>;
-  if (countriesResponse.isFetching) return <h2>Loading...</h2>;
+  if (countriesResponse.isFetching) return <LoadingCountries />;
 
   return (
     <div className="countries">

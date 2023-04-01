@@ -287,3 +287,25 @@ a:visited {
 }
 
 // End Country details
+
+// Loading
+.loading-wrapper {
+  display: grid;
+}
+
+.loading-card {
+  width: 280px;
+  height: 360px;
+  animation: loading 250ms ease-in-out alternate infinite;
+}
+
+@keyframes loading {
+  from {
+    background-color: #333;
+  }
+  to {
+    background-color: #999;
+  }
+}
+
+// End Loading
