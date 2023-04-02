@@ -40,7 +40,8 @@ const Countries = ({ countrySearch, regionSearch }: CountriesProps) => {
 
   const countriesResponse: UseQueryResult<TCountry, Error> = useQuery(
     "countries",
-    fetchCountries
+    fetchCountries,
+    { refetchOnWindowFocus: false }
   );
 
   useEffect(() => {

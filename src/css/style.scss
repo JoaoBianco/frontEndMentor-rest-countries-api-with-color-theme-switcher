@@ -1,5 +1,5 @@
 :root {
-  --clr__background__accent: hsl(0, 0%, 98%);
+  --clr__background__accent: hsl(0, 0%, 100%);
   --clr__background__accent-dark: hsl(209, 23%, 22%);
   --clr__background: hsl(0, 0%, 98%);
   --clr__background-dark: hsl(207, 26%, 17%);
@@ -135,7 +135,7 @@ a:visited {
   isolation: isolate;
   padding-block: var(--spacer-400);
 
-  background-color: var(--clr__input);
+  background-color: var(--clr__background__accent);
   box-shadow: 0px 1px 15px -10px var(--clr__input);
   z-index: 2;
 
@@ -170,7 +170,7 @@ a:visited {
   }
   input,
   select {
-    background-color: inherit;
+    background-color: var(--clr__background__accent);
     color: inherit;
   }
 }

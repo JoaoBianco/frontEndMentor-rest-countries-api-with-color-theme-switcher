@@ -26,6 +26,7 @@ const Country = () => {
     {
       onError: () => errorResponseHandler(),
       retry: false,
+      refetchOnWindowFocus: false,
     }
   );
 
